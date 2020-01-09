@@ -36,7 +36,7 @@ Resources:
     Properties:
       CodeUri: subscriber/
       Handler: index.handler
-      Runtime: nodejs6.10
+      Runtime: nodejs10.x
       Role: !GetAtt SubscriberRole.Arn
       Description: 'Polls Amazon MQ broker for messages and pushes to worker function'
       Timeout: 15
@@ -58,7 +58,7 @@ Resources:
     Properties:
       CodeUri: worker/
       Handler: index.handler
-      Runtime: nodejs6.10
+      Runtime: nodejs10.x
       Role: !GetAtt WorkerRole.Arn
       Description: 'Writes incoming message to DynamoDB'
       Environment:
